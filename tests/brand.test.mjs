@@ -59,7 +59,8 @@ test("header brand uses the PNG logo asset", async () => {
 
   assert.match(
     main,
-    /<img class="brand-logo" src="assets\/brand\/logo\.png" alt="" width="32" height="32">/,
+    /<img class="brand-logo" src="assets\/brand\/logo\.png" alt="체질핏" width="32" height="32">/,
   );
+  assert.doesNotMatch(main, /<span>체질핏<\/span>/);
   assert.doesNotMatch(main, /<span class="brand-mark"><\/span>/);
 });

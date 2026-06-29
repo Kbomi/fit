@@ -27,8 +27,7 @@ function render() {
   app.innerHTML = `
     <header class="site-header">
       <a class="brand" href="#" data-action="home">
-        <img class="brand-logo" src="assets/brand/logo.png" alt="체질핏 로고" width="32" height="32">
-        <!-- <span>체질핏</span> -->
+        <img class="brand-logo" src="assets/brand/logo.png" alt="체질핏" width="32" height="32">
       </a>
       <nav class="nav">
         <a href="#test">테스트</a>
