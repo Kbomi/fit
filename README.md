@@ -73,7 +73,6 @@ src/scoring.js          체질 점수 계산 로직
 tests/scoring.test.mjs  점수 계산 테스트
 index.html              앱 진입점
 styles.css              전체 화면 스타일
-service-plan.md         서비스 기획서
 ```
 
 ## 안내
