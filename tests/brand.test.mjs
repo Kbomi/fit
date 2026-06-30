@@ -40,12 +40,15 @@ test("header uses the Chejilfit warm background color", async () => {
 
 test("site metadata points at PNG brand assets", async () => {
   const html = await readFile("index.html", "utf8");
+  const siteUrl = "https://fit.kko-kkuri.com/";
+  const ogImageUrl = `${siteUrl}assets/brand/og.png`;
 
   assert.match(html, /<link rel="icon" href="assets\/brand\/favicon\.png" type="image\/png">/);
   assert.match(html, /<link rel="apple-touch-icon" href="assets\/brand\/logo\.png">/);
-  assert.match(html, /<meta property="og:image" content="assets\/brand\/og\.png">/);
+  assert.match(html, new RegExp(`<meta property="og:url" content="${siteUrl}">`));
+  assert.match(html, new RegExp(`<meta property="og:image" content="${ogImageUrl}">`));
   assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
-  assert.match(html, /<meta name="twitter:image" content="assets\/brand\/og\.png">/);
+  assert.match(html, new RegExp(`<meta name="twitter:image" content="${ogImageUrl}">`));
 
   await Promise.all([
     access("assets/brand/favicon.png"),
